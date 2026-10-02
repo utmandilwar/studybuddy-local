@@ -40,7 +40,7 @@ class AppConfig:
     OLLAMA_BASE_URL: str = os.getenv("OLLAMA_BASE_URL", "http://127.0.0.1:11434")
     DEFAULT_MODEL: str = os.getenv("OLLAMA_MODEL", "qwen2.5:3b")
     FALLBACK_MODELS: list[str] = ["llama3.2:3b", "phi3:mini", "mistral:7b"]
-    OLLAMA_TIMEOUT: float = float(os.getenv("OLLAMA_TIMEOUT", "60.0"))
+    OLLAMA_TIMEOUT: float = float(os.getenv("OLLAMA_TIMEOUT", "120.0"))
 
     # Local Embeddings Settings
     EMBEDDING_MODEL_NAME: str = os.getenv(

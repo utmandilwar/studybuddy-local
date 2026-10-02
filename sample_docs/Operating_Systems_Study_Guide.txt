@@ -1,0 +1,25 @@
+# Operating Systems & Systems Architecture — High-Yield Exam Study Guide
+
+## Chapter 1: Operating System Fundamentals
+An operating system (OS) is system software that manages computer hardware, software resources, and provides common services for computer programs. The core of the operating system is the kernel, which executes in privileged supervisor mode (kernel mode) and possesses direct access to hardware instructions and memory address spaces. User applications execute in unprivileged user mode, transitioning into kernel mode via system calls.
+
+## Chapter 2: Process Management & Scheduling
+A process is defined as an instance of a program in execution. A process control block (PCB) contains critical metadata including the process identifier (PID), program counter (PC), CPU registers, memory management information, and list of open files.
+CPU scheduling algorithms determine which ready process is allocated CPU execution time:
+- First-Come, First-Served (FCFS): Simple FIFO queue; suffers from the convoy effect.
+- Shortest Job First (SJF): Provably optimal average waiting time; requires predicting future CPU burst durations.
+- Round Robin (RR): Preemptive time-sliced scheduling with a fixed time quantum; optimal for interactive time-sharing systems.
+
+## Chapter 3: Memory Management & Virtual Memory
+Physical memory (RAM) is organized into fixed-size physical frames. Virtual memory decouples logical program addresses from physical addresses:
+- Paging: Divides logical address space into fixed-size blocks called pages (typically 4 KB). The page table maps logical page numbers to physical frame numbers.
+- Segmentation: Divides address space into variable-sized logical segments reflecting program structure (e.g., code, stack, heap).
+- Page Fault: An interrupt generated when an executing process references a page that is not currently mapped into physical RAM. The OS page fault handler initiates secondary storage disk I/O to swap the missing page into a free frame.
+
+## Chapter 4: Concurrency & Synchronization
+Threads share the same virtual address space, data section, and open files of their parent process, but retain independent program counters, registers, and stack frames.
+Race conditions arise when multiple concurrent threads access shared state without synchronization.
+Mutual exclusion mechanisms:
+- Mutex Locks: Binary synchronization primitive protecting a critical section.
+- Semaphores: Integer variables accessed via atomic wait() (P) and signal() (V) operations.
+Deadlock conditions (Coffman conditions): Mutual exclusion, Hold and wait, No preemption, Circular wait. All four conditions must hold simultaneously for deadlock to occur.
