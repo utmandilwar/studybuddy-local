@@ -1,0 +1,2 @@
+# This directory holds runtime local database files and document metadata.
+# Raw study content and vector embeddings are excluded from Git for student privacy.

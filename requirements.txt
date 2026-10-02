@@ -1,0 +1,7 @@
+streamlit>=1.30.0,<2.0.0
+pymupdf>=1.23.0
+ollama>=0.2.0
+chromadb>=0.4.22
+sentence-transformers>=2.2.2
+pydantic>=2.0.0
+pytest>=7.0.0
